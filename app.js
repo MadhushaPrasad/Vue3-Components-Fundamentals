@@ -1,10 +1,4 @@
-const app = Vue.createApp({
-  data() {
-    return {
-      plans: ['John', 'Micle', 'Bob'],
-    };
-  },
-});
+const app = Vue.createApp({});
 
 // =============================================================================================================
 
@@ -31,15 +25,20 @@ app.component('click-counter-template', {
 });
 
 // ==============================================================================================================
+// Nested Components In Vue
+app.component('plan-picker', {
+  template: '#plan-picker-template',
+  data() {
+    return {
+      plans: ['John', 'Micle', 'Bob'],
+    };
+  },
+});
 
+// ==============================================================================================================
 // Reusable Components with Props
 app.component('reusable-template', {
   template: '#reusable-template',
-  data() {
-    return {
-      count: 0,
-    };
-  },
   //   props: ['name'],
   //   props: {
   //     name: String,

@@ -33,13 +33,7 @@
       <h2 class="subtitle">
         We travel the world to source the very best single origin coffee for you
       </h2>
-      <div style="display: flex; flex-direction: row; flex-wrap: wrap">
-        <!-- Reusable Component with Props -->
-        <reusable-template
-          v-for="plan in plans"
-          :name="plan"
-        ></reusable-template>
-      </div>
+      <plan-picker></plan-picker>
     </div>
 
     <!-- Reusable Components -->
@@ -49,6 +43,16 @@
               <span class="title">{{name}}</span>
           </div>
       </div>
+    </script>
+
+    <!-- Nested Components In Vue -->
+    <script type="text/x-templete" id="plan-picker-template">
+      <div style="display: flex; flex-direction: row; flex-wrap: wrap">
+          <!-- Reusable Component with Props -->
+          <reusable-template
+            v-for="plan in plans"
+            :name="plan"></reusable-template>
+        </div>
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0"></script>
