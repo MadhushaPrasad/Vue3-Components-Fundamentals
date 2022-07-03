@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: cadetblue;
+    }
+    .subtitle {
+      text-align: center;
+      color: darkblue;
+    }
+    .plan {
+      display: flex;
+      align-items: center;
+      width: 250px;
+      height: 50px;
+      background-color: white;
+      border-radius: 5px;
+      margin: 15px;
+    }
+
+    .plan > .description > .title {
+      padding-left: 20px;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <h2 class="subtitle">
+        We travel the world to source the very best single origin coffee for you
+      </h2>
+      <div style="display: flex; flex-direction: row; flex-wrap: wrap">
+        <!-- Reusable Component with Props -->
+        <reusable-template
+          v-for="plan in plans"
+          :name="plan"
+        ></reusable-template>
+      </div>
+    </div>
+
+    <!-- Reusable Components -->
+    <script type="text/x-templete" id="reusable-template">
+        <div class="plan">
+          <div class="description">
+              <span class="title">{{name}}</span>
+          </div>
+      </div>
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0"></script>
+    <script src="https://unpkg.com/vue-router@4.0.5/dist/vue-router.global.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,4 +1,10 @@
-const app = Vue.createApp({});
+const app = Vue.createApp({
+  data() {
+    return {
+      plans: ['John', 'Micle', 'Bob'],
+    };
+  },
+});
 
 // =============================================================================================================
 
@@ -21,6 +27,25 @@ app.component('click-counter-template', {
     return {
       count: 0,
     };
+  },
+});
+
+// ==============================================================================================================
+
+// Reusable Components with Props
+app.component('reusable-template', {
+  template: '#reusable-template',
+  data() {
+    return {
+      count: 0,
+    };
+  },
+  //   props: ['name'],
+  //   props: {
+  //     name: String,
+  //   },
+  props: {
+    name: { type: String, default: 'Hello Test', required: true },
   },
 });
 
