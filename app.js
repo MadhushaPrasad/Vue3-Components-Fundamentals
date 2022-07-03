@@ -1,7 +1,30 @@
-const app = Vue.createApp({});
+//Global vs Local Vue Components
+let PlanComponent = {
+  template: '#reusable-template',
+  //   props: ['name'],
+  //   props: {
+  //     name: String,
+  //   },
+  props: {
+    name: { type: String, default: 'Hello Test', required: true },
+  },
+};
+
+let PlanPickerComponet = {
+  components: { 'reusable-template': PlanComponent },
+  template: '#plan-picker-template',
+  data() {
+    return {
+      plans: ['John', 'Micle', 'Bob'],
+    };
+  },
+};
+
+const app = Vue.createApp({
+  components: { 'plan-picker': PlanPickerComponet },
+});
 
 // =============================================================================================================
-
 // simple component intro
 app.component('click-counter', {
   template: `<button @click="count++">{{count}}</button>`,
@@ -13,7 +36,6 @@ app.component('click-counter', {
 }); // <-- component <-- {name,{template,props,methods,data,computed,watch,directives}
 
 // ==============================================================================================================
-
 // Vue Component Template
 app.component('click-counter-template', {
   template: '#click-counter-template',

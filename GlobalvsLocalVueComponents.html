@@ -46,12 +46,12 @@
     </script>
 
     <!-- Nested Components In Vue -->
-    <script type="text/x-templete" id="reusable-template">
+    <script type="text/x-templete" id="plan-picker-template">
       <div style="display: flex; flex-direction: row; flex-wrap: wrap">
           <!-- Reusable Component with Props -->
-          <reusable-template 
-            v-for="plan in plans"
-            :name="plan"></reusable-template>
+          <reusable-template
+          v-for="plan in plans"
+          :name="plan"></reusable-template>
         </div>
     </script>
 
