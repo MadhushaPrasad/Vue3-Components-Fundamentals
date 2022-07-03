@@ -14,6 +14,14 @@ app.component('click-counter', {
 
 // ==============================================================================================================
 
-
+// Vue Component Template
+app.component('click-counter-template', {
+  template: '#click-counter-template',
+  data() {
+    return {
+      count: 0,
+    };
+  },
+});
 
 app.mount('#app');

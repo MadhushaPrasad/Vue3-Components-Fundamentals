@@ -12,12 +12,15 @@
       <!-- simple component intro-->
       <click-counter></click-counter>
       <hr />
-
-
-
-      
+      // Vue Component Template call
+      <click-counter-template></click-counter-template>
+      <hr />
     </div>
 
+    // Vue Component Template
+    <script type="text/x-templete" id="click-counter-template">
+      <button @click="count++"> The Count is : {{count}} </button>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0"></script>
     <script src="https://unpkg.com/vue-router@4.0.5/dist/vue-router.global.js"></script>
     <script src="./app.js"></script>
