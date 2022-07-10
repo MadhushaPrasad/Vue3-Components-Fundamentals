@@ -7,6 +7,12 @@ let PlanComponent = {
   //   },
   props: {
     name: { type: String, default: 'Hello Test', required: true },
+    selected: { type: Boolean, default: false },
+  },
+  methods: {
+    select() {
+      this.$emit('select', this.name);
+    },
   },
 };
 
@@ -16,7 +22,13 @@ let PlanPickerComponet = {
   data() {
     return {
       plans: ['John', 'Micle', 'Bob'],
+      selectedPlan: null,
     };
+  },
+  methods: {
+    selectPlan(plan) {
+      this.selectedPlan = plan;
+    },
   },
 };
 

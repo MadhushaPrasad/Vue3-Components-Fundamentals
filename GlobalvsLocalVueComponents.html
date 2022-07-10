@@ -27,6 +27,10 @@
     .plan > .description > .title {
       padding-left: 20px;
     }
+
+    .active-plan {
+      color: blue;
+    }
   </style>
   <body>
     <div id="app">
@@ -38,7 +42,7 @@
 
     <!-- Reusable Components -->
     <script type="text/x-templete" id="reusable-template">
-        <div class="plan">
+        <div class="plan" :class="{'active-plan':selected}" @click="select">
           <div class="description">
               <span class="title">{{name}}</span>
           </div>
@@ -51,7 +55,10 @@
           <!-- Reusable Component with Props -->
           <reusable-template
           v-for="plan in plans"
-          :name="plan"></reusable-template>
+          :name="plan"
+          :selected="plan === selectPlan"
+          v-on:select="selectPlan"
+          ></reusable-template>
         </div>
     </script>
 
